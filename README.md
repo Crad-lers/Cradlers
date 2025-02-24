@@ -1,37 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Cradlers - The Ultimate Smart Baby Cradle 🌟
 
-## Getting Started
+## 👶 Welcome to Cradlers!
+Say hello to **Cradlers**, the **next-generation smart baby cradle** designed to ensure your baby's comfort while giving parents peace of mind. Packed with **cutting-edge technology**, Cradlers takes baby care to the next level. 🚀
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Why Choose Cradlers?
+🌟 **Automated Swinging** - Smooth and gentle motions to soothe your baby effortlessly.
+🎵 **Soothing Music** - Plays calming lullabies to help your baby sleep peacefully.
+🌡️ **Temperature Control** - Smart sensors maintain an optimal sleeping environment.
+🍼 **Urine Detection** - Instant alerts when it's time for a diaper change.
+📱 **Mobile App Control** - Manage everything from an intuitive Flutter-powered app.
+🖥️ **Modern UI with Vite + React + Tailwind CSS** - Beautiful, fast, and responsive web experience.
+
+---
+
+## 📲 How It Works
+Simply connect Cradlers to our **Flutter-based mobile app** and enjoy full control over its features! ✅ Adjust swing intensity, 🎶 choose music tracks, 🌡️ set temperature preferences, and 🍼 get real-time alerts for diaper changes—all from your smartphone! 📱
+
+Our **informative website** is built using **Vite + React + Tailwind CSS** to ensure a **fast, modern, and seamless user experience**. 🚀
+
+---
+
+## 🌍 Explore Our Informative Website
+This GitHub repository serves as the **official informative website** for Cradlers. Here, you'll find everything you need to know about our product, its **unique benefits**, and how it transforms parenting. 🤱✨
+
+### 🖥️ Technologies Used
+- **Vite** - Fast and lightweight frontend tooling
+- **React** - Dynamic and interactive user interface
+- **Tailwind CSS** - Beautiful and responsive design system
+
+---
+
+## 📂 Repository Structure
+```
+/ - Root directory
+  |-- docs/       # In-depth product guides & FAQs
+  |-- images/     # Beautiful product images & infographics
+  |-- website/    # Interactive web experience files
+  |-- src/        # React components and Tailwind styling
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Development Guidelines
+### 🔖 Push Commit Naming Conventions
+To keep our repository **clean and structured**, follow these commit naming guidelines:
+- `feat: Add [feature name]` – 🚀 When adding a new feature or section
+- `fix: Fix [issue name]` – 🛠️ When fixing errors or improving content
+- `refactor: Refactor [component name]` – 🔄 When restructuring existing sections for clarity
+- `docs: Update [documentation section]` – 📖 When modifying website content
+- `chore: Update dependencies/configurations` – ⚙️ For non-content changes like UI tweaks or dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 💡 Example Commit Messages
+✅ `feat: Add interactive FAQs section`
+✅ `fix: Correct alignment issues on homepage`
+✅ `docs: Update About Us page with new team members`
+✅ `chore: Upgrade Tailwind CSS to latest version`
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Cradlers
+Cradlers - **Because Your Baby Deserves the Best!** ❤️
