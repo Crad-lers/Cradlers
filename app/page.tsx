@@ -16,7 +16,7 @@ export default function Home() {
         <header className="bg-white shadow-md fixed w-full top-0 z-50">
           <nav className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
             <div className="flex items-center space-x-2">
-              <Image src="/globe.svg" alt="Cradlers Logo" width={40} height={40} />
+              <Image src="/logo.png" alt="Cradlers Logo" width={40} height={40} />
               <span className="text-2xl font-bold text-[#30D5C8]">Cradlers</span>
             </div>
             <ul className="hidden md:flex space-x-8 text-gray-700">
