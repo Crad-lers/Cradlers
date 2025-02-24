@@ -1,101 +1,99 @@
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Head>
+        <title>Cradlers - Comfort and Care for Your Little One</title>
+        <meta name="description" content="Cradlers – Smart Baby Cradle that gently rocks your baby to sleep with intelligent motion technology." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="bg-gradient-to-r from-white to-[#E0F7F5] min-h-screen font-sans">
+
+        {/* Header Section */}
+        <header className="bg-white shadow-md fixed w-full top-0 z-50">
+          <nav className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div className="flex items-center space-x-2">
+              <Image src="/globe.svg" alt="Cradlers Logo" width={40} height={40} />
+              <span className="text-2xl font-bold text-[#30D5C8]">Cradlers</span>
+            </div>
+            <ul className="hidden md:flex space-x-8 text-gray-700">
+              <li><a href="#home" className="hover:text-[#30D5C8] transition">Home</a></li>
+              <li><a href="#features" className="hover:text-[#30D5C8] transition">Features</a></li>
+              <li><a href="#testimonials" className="hover:text-[#30D5C8] transition">Testimonials</a></li>
+              <li><a href="#contact" className="hover:text-[#30D5C8] transition">Contact</a></li>
+            </ul>
+            <a href="#" className="hidden md:inline-block bg-[#28B7A6] hover:bg-[#1F9786] text-white py-2 px-6 rounded-lg shadow-lg transition">
+              Buy Now
+            </a>
+          </nav>
+        </header>
+
+        {/* Hero Section */}
+        <section id="home" className="text-center py-32 pt-28">
+          <h1 className="text-5xl font-bold text-gray-800 mb-4">
+            Smart Baby Cradle
+          </h1>
+          <p className="text-lg text-gray-600 mb-8">
+            Comfort and Care for Your Little One
+          </p>
+          <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
+            Shop Now
+          </button>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12">Smart Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-[#E0F7F5] rounded-lg shadow-md">
+                <Image src="/globe.svg" alt="Intelligent Motion" width={100} height={100} />
+                <h3 className="text-xl font-semibold mb-2">Intelligent Motion</h3>
+                <p>Adapts to your baby's sleep patterns for a peaceful nap.</p>
+              </div>
+              <div className="text-center p-6 bg-[#E0F7F5] rounded-lg shadow-md">
+                <Image src="/globe.svg" alt="Safety Certified" width={100} height={100} />
+                <h3 className="text-xl font-semibold mb-2">Safety Certified</h3>
+                <p>Built with safety in mind, so you can rest easy.</p>
+              </div>
+              <div className="text-center p-6 bg-[#E0F7F5] rounded-lg shadow-md">
+                <Image src="/globe.svg" alt="Mobile App Control" width={100} height={100} />
+                <h3 className="text-xl font-semibold mb-2">Mobile App Control</h3>
+                <p>Control and monitor from anywhere with the mobile app.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12">What Parents Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-[#E0F7F5] p-6 rounded-lg shadow-md">
+                <p className="text-gray-700 mb-4">
+                  &quot;The Smart Baby Cradle is a lifesaver! My baby sleeps peacefully, and I get to rest too!&quot;
+                </p>
+                <h3 className="text-lg font-semibold">– Sarah M.</h3>
+              </div>
+              <div className="bg-[#E0F7F5] p-6 rounded-lg shadow-md">
+                <p className="text-gray-700 mb-4">
+                  &quot;I love the mobile app control feature. It makes parenting so much easier.&quot;
+                </p>
+                <h3 className="text-lg font-semibold">– John D.</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer Section */}
+        <footer id="contact" className="py-10 bg-gray-800 text-gray-300 text-center">
+          <p>© 2025 Cradlers. All rights reserved.</p>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
