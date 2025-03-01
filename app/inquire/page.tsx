@@ -25,7 +25,7 @@ const Inquire = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/submit-inquiry", { // ✅ Correct API Route
+      const response = await fetch("/api/submit-inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,9 +58,9 @@ const Inquire = () => {
         <Header />
 
         {/* Page Content - Form Centered */}
-        <main className="flex flex-grow items-center justify-center bg-gray-100 px-4 py-8">
-          <div className="bg-white shadow-lg rounded-lg px-8 py-8 w-full max-w-lg">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+        <main className="flex flex-grow items-center justify-center bg-gray-100 px-4 py-12 sm:py-20">
+          <div className="bg-white shadow-lg rounded-lg px-6 sm:px-8 py-8 w-full max-w-lg">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 text-center">
               Submit an Inquiry
             </h2>
             <form onSubmit={handleSubmit}>

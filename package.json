@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.4.7",
     "googleapis": "^146.0.0",
     "lucide-react": "^0.475.0",
