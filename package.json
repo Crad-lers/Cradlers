@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@react-spring/web": "^9.7.5",
     "framer-motion": "^12.4.7",
     "googleapis": "^146.0.0",
     "lucide-react": "^0.475.0",
