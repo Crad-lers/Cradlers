@@ -149,16 +149,38 @@ export default function Home() {
       <style jsx>{`
         @keyframes scroll {
           from {
-            transform: translateX(0%);
+            transform: translateX(0);
           }
           to {
             transform: translateX(-50%);
           }
         }
 
+        .scroll-wrapper {
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+          width: 100%;
+        }
+
         .animate-scroll {
           display: flex;
           animation: scroll 25s linear infinite;
+          min-width: 200%;
+        }
+
+        .testimonial {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 0 1rem;
+          min-width: 320px;
+          max-width: 450px;
+          text-align: left;
         }
       `}</style>
     </>
