@@ -115,6 +115,39 @@ export default function Marketing() {
           </div>
         </section>
 
+        {/* About IoT Section */}
+        <section className="py-20 bg-[#E0F7F5]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Left - Image */}
+              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="IoT Smart Cradle"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Right - Content */}
+              <div className="space-y-6">
+                <h2 className="text-4xl font-extrabold text-gray-900">
+                  IoT-Enabled Smart Cradle
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Our smart cradle is powered by IoT technology, allowing you to monitor and control your baby's environment from anywhere. Whether you're at work or on the go, you can ensure your baby is safe and comfortable.
+                </p>
+                <p className="text-lg text-gray-600">
+                  With real-time data tracking and cloud integration, you can analyze your baby's sleep patterns and make adjustments to improve their comfort. The cradle adapts to your baby's needs, providing a personalized experience.
+                </p>
+                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
+                  Explore Features
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* App Download Section */}
         <section className="bg-gradient-to-r from-[#28B7A6] to-[#1F9786] text-white text-center py-16 px-6">
           <h2 className="text-4xl font-extrabold mb-4">
