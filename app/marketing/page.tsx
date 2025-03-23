@@ -122,7 +122,7 @@ export default function Marketing() {
               {/* Left - Image */}
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="IoT Smart Cradle"
                   fill
                   className="object-cover"
@@ -143,6 +143,105 @@ export default function Marketing() {
                 <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
                   Explore Features
                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Android & iOS App Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Left - Content */}
+              <div className="space-y-6">
+                <h2 className="text-4xl font-extrabold text-gray-900">
+                  Android & iOS App
+                </h2>
+                <p className="text-lg text-gray-600">
+                  The Cradlers App, available for both Android and iOS, is your ultimate parenting companion. This intuitive app allows you to control every aspect of the smart cradle with just a few taps on your smartphone.
+                </p>
+                <p className="text-lg text-gray-600">
+                  Adjust the rocking speed, play soothing lullabies, or monitor your baby's sleep patterns—all from the palm of your hand. The app also sends real-time alerts, notifying you if your baby wakes up or if the cradle needs attention.
+                </p>
+                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
+                  Download Now
+                </button>
+              </div>
+
+              {/* Right - Image */}
+              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Android & iOS App"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cloud Integration Section */}
+        <section className="py-20 bg-[#E0F7F5]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Left - Image */}
+              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Cloud Integration"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Right - Content */}
+              <div className="space-y-6">
+                <h2 className="text-4xl font-extrabold text-gray-900">
+                  Cloud Integration
+                </h2>
+                <p className="text-lg text-gray-600">
+                  With Cloud Integration, your baby's sleep data is securely stored and easily accessible whenever you need it. The smart cradle syncs with the cloud, allowing you to track sleep patterns, monitor trends, and make informed decisions about your baby's care.
+                </p>
+                <p className="text-lg text-gray-600">
+                  Whether you're at home or on the go, you can access this data through the app, ensuring you're always in the loop. The cloud also enables advanced analytics, helping you understand your baby's sleep habits and optimize their comfort over time.
+                </p>
+                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customizable Settings Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Left - Content */}
+              <div className="space-y-6">
+                <h2 className="text-4xl font-extrabold text-gray-900">
+                  Customizable Settings
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Every baby is unique, and our Customizable Settings ensure that the cradle adapts to your baby's specific needs. From adjustable rocking speeds to personalized lullabies, you can fine-tune the cradle to create the perfect environment for your little one.
+                </p>
+                <p className="text-lg text-gray-600">
+                  The temperature control feature ensures your baby stays cozy, while the motion settings mimic the natural rocking of your arms. With the mobile app, you can save your preferred settings and switch between them effortlessly.
+                </p>
+                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
+                  Explore Settings
+                </button>
+              </div>
+
+              {/* Right - Image */}
+              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Customizable Settings"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
