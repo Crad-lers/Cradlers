@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
@@ -7,8 +8,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Smartphone, Wifi, Cloud, Settings, Download } from "lucide-react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import SplashScreen from "../Components/SplashScreen"; // Import splash screen
 
 export default function Marketing() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setLoading(false), 3000); // 3 seconds
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (loading) return <SplashScreen />;
+
   const carouselImages = [
     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -34,7 +45,7 @@ export default function Marketing() {
     {
       icon: Settings,
       title: "Customizable Settings",
-      description: "Adjust rocking speed, music, and temperature to suit your baby's needs.",
+      description: "Adjust rocking speed, music, and temperature of the room.",
     },
   ];
 
@@ -50,10 +61,9 @@ export default function Marketing() {
       </Head>
 
       <main className="bg-gradient-to-b from-white to-[#E0F7F5] min-h-screen font-sans">
-        {/* Header Section */}
         <Header />
 
-        {/* Hero Section with Carousel */}
+        {/* Hero Section */}
         <section className="relative h-[600px]">
           <Carousel
             showThumbs={false}
@@ -90,7 +100,7 @@ export default function Marketing() {
           </Carousel>
         </section>
 
-        {/* IoT & App Features Section */}
+        {/* App Features */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
@@ -115,30 +125,27 @@ export default function Marketing() {
           </div>
         </section>
 
-        {/* About IoT Section */}
+        {/* IoT Section */}
         <section className="py-20 bg-[#E0F7F5]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Left - Image */}
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src={carouselImages[0]}
                   alt="IoT Smart Cradle"
                   fill
                   className="object-cover"
                 />
               </div>
-
-              {/* Right - Content */}
               <div className="space-y-6">
                 <h2 className="text-4xl font-extrabold text-gray-900">
                   IoT-Enabled Smart Cradle
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Our smart cradle is powered by IoT technology, allowing you to monitor and control your baby's environment from anywhere. Whether you're at work or on the go, you can ensure your baby is safe and comfortable.
+                  Our smart cradle is powered by IoT technology, allowing you to monitor and control your baby's environment from anywhere.
                 </p>
                 <p className="text-lg text-gray-600">
-                  With real-time data tracking and cloud integration, you can analyze your baby's sleep patterns and make adjustments to improve their comfort. The cradle adapts to your baby's needs, providing a personalized experience.
+                  With real-time data tracking and cloud integration, you can analyze your baby's sleep patterns and make adjustments to improve their comfort.
                 </p>
                 <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
                   Explore Features
@@ -148,31 +155,28 @@ export default function Marketing() {
           </div>
         </section>
 
-        {/* Android & iOS App Section */}
+        {/* Mobile App Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Left - Content */}
               <div className="space-y-6">
                 <h2 className="text-4xl font-extrabold text-gray-900">
                   Android & iOS App
                 </h2>
                 <p className="text-lg text-gray-600">
-                  The Cradlers App, available for both Android and iOS, is your ultimate parenting companion. This intuitive app allows you to control every aspect of the smart cradle with just a few taps on your smartphone.
+                  The Cradlers App allows you to control every aspect of the cradle with just a few taps on your smartphone.
                 </p>
                 <p className="text-lg text-gray-600">
-                  Adjust the rocking speed, play soothing lullabies, or monitor your baby's sleep patterns—all from the palm of your hand. The app also sends real-time alerts, notifying you if your baby wakes up or if the cradle needs attention.
+                  Adjust rocking speed, play lullabies, or monitor sleep patterns—all from your phone.
                 </p>
                 <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
                   Download Now
                 </button>
               </div>
-
-              {/* Right - Image */}
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Android & iOS App"
+                  src={carouselImages[1]}
+                  alt="Mobile App"
                   fill
                   className="object-cover"
                 />
@@ -181,30 +185,24 @@ export default function Marketing() {
           </div>
         </section>
 
-        {/* Cloud Integration Section */}
+        {/* Cloud Section */}
         <section className="py-20 bg-[#E0F7F5]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Left - Image */}
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src={carouselImages[0]}
                   alt="Cloud Integration"
                   fill
                   className="object-cover"
                 />
               </div>
-
-              {/* Right - Content */}
               <div className="space-y-6">
                 <h2 className="text-4xl font-extrabold text-gray-900">
                   Cloud Integration
                 </h2>
                 <p className="text-lg text-gray-600">
-                  With Cloud Integration, your baby's sleep data is securely stored and easily accessible whenever you need it. The smart cradle syncs with the cloud, allowing you to track sleep patterns, monitor trends, and make informed decisions about your baby's care.
-                </p>
-                <p className="text-lg text-gray-600">
-                  Whether you're at home or on the go, you can access this data through the app, ensuring you're always in the loop. The cloud also enables advanced analytics, helping you understand your baby's sleep habits and optimize their comfort over time.
+                  Your baby's sleep data is securely stored in the cloud. Access trends and optimize care anytime.
                 </p>
                 <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
                   Learn More
@@ -214,31 +212,25 @@ export default function Marketing() {
           </div>
         </section>
 
-        {/* Customizable Settings Section */}
+        {/* Custom Settings */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Left - Content */}
               <div className="space-y-6">
                 <h2 className="text-4xl font-extrabold text-gray-900">
                   Customizable Settings
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Every baby is unique, and our Customizable Settings ensure that the cradle adapts to your baby's specific needs. From adjustable rocking speeds to personalized lullabies, you can fine-tune the cradle to create the perfect environment for your little one.
-                </p>
-                <p className="text-lg text-gray-600">
-                  The temperature control feature ensures your baby stays cozy, while the motion settings mimic the natural rocking of your arms. With the mobile app, you can save your preferred settings and switch between them effortlessly.
+                  Customize rocking speeds, lullabies, and temperature for your baby's comfort.
                 </p>
                 <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
                   Explore Settings
                 </button>
               </div>
-
-              {/* Right - Image */}
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Customizable Settings"
+                  src={carouselImages[0]}
+                  alt="Custom Settings"
                   fill
                   className="object-cover"
                 />
@@ -249,9 +241,7 @@ export default function Marketing() {
 
         {/* App Download Section */}
         <section className="bg-gradient-to-r from-[#28B7A6] to-[#1F9786] text-white text-center py-16 px-6">
-          <h2 className="text-4xl font-extrabold mb-4">
-            Download the App Today
-          </h2>
+          <h2 className="text-4xl font-extrabold mb-4">Download the App Today</h2>
           <p className="text-lg sm:text-xl mb-6">
             Available on both Android and iOS. Take control of your baby's comfort from anywhere.
           </p>
@@ -267,7 +257,6 @@ export default function Marketing() {
           </div>
         </section>
 
-        {/* Footer Section */}
         <Footer />
       </main>
     </>
