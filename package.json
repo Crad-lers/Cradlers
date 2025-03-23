@@ -11,13 +11,15 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@react-spring/web": "^9.7.5",
+    "cradlers": "file:",
     "framer-motion": "^12.4.7",
     "googleapis": "^146.0.0",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@types/node": "^20",
