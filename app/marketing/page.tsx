@@ -1,264 +1,251 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Smartphone, Wifi, Cloud, Settings, Download } from "lucide-react";
+import {
+  Baby,
+  Shield,
+  Smartphone,
+  Moon,
+  Heart,
+  Music,
+  Quote,
+} from "lucide-react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import SplashScreen from "../Components/SplashScreen"; // Import splash screen
+import SplashScreen from "../Components/SplashScreen";
+import { useEffect, useState } from "react";
 
 export default function Marketing() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
+  // Hide splash screen after 3 seconds
   useEffect(() => {
-    const timeout = setTimeout(() => setLoading(false), 3000); // 3 seconds
-    return () => clearTimeout(timeout);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <SplashScreen />;
-
-  const carouselImages = [
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  ];
-
-  const appFeatures = [
+  const testimonials = [
     {
-      icon: Wifi,
-      title: "IoT-Enabled Smart Cradle",
-      description: "Control and monitor your baby's cradle remotely using Wi-Fi connectivity.",
+      text: "This cradle is a lifesaver! My baby sleeps so well, and I finally get some rest too!",
+      name: "Sarah M.",
     },
     {
-      icon: Smartphone,
-      title: "Android & iOS App",
-      description: "Download our app to control the cradle, track sleep patterns, and receive alerts.",
+      text: "I love how I can control the cradle remotely with the app. Super convenient!",
+      name: "John D.",
     },
     {
-      icon: Cloud,
-      title: "Cloud Integration",
-      description: "Store and analyze your baby's sleep data securely in the cloud.",
+      text: "The quality of sleep my baby gets with this cradle is amazing. Best purchase ever!",
+      name: "Emma T.",
     },
     {
-      icon: Settings,
-      title: "Customizable Settings",
-      description: "Adjust rocking speed, music, and temperature of the room.",
+      text: "Super easy to set up and use. The smart motion adapts perfectly to my baby's needs.",
+      name: "Michael R.",
+    },
+    {
+      text: "I highly recommend this to all new parents. It's a game changer!",
+      name: "Sophia L.",
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Marketing - Cradlers</title>
+        <title>Cradlers - Comfort and Care for Your Little One</title>
         <meta
           name="description"
-          content="Discover how Cradlers revolutionizes baby care with IoT technology and a dedicated Android & iOS app."
+          content="Cradlers – Smart Baby Cradle that gently rocks your baby to sleep with intelligent motion technology."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-gradient-to-b from-white to-[#E0F7F5] min-h-screen font-sans">
-        <Header />
+      {isLoading ? (
+        <SplashScreen />
+      ) : (
+        <main className="bg-gradient-to-b from-white to-[#E0F7F5] min-h-screen font-sans">
+          {/* Header Section */}
+          <Header />
 
-        {/* Hero Section */}
-        <section className="relative h-[600px]">
-          <Carousel
-            showThumbs={false}
-            infiniteLoop
-            autoPlay
-            interval={5000}
-            showStatus={false}
-            className="h-full"
+          {/* Hero Section */}
+          <section id="home" className="py-24 sm:py-32 px-6">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
+              {/* Left - Text Content */}
+              <div className="flex-1 space-y-6">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+                  <span className="bg-gradient-to-r from-[#28B7A6] to-[#1F9786] text-transparent bg-clip-text">
+                    The Smart Baby Cradle
+                  </span>
+                  <br />
+                  Designed for Peaceful Sleep
+                </h1>
+                <p className="text-lg sm:text-xl text-gray-600">
+                  Comfort and Care for Your Little One with Intelligent Motion
+                  Technology.
+                </p>
+                <button className="bg-gradient-to-r from-[#1F9786] to-[#28B7A6] hover:from-[#28B7A6] hover:to-[#1F9786] text-white py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105 duration-300">
+                  Shop Now
+                </button>
+              </div>
+
+              {/* Right - Cradle Image */}
+              <div className="flex-1 flex justify-center mt-10 md:mt-0">
+                <Image
+                  src="/cradle.png"
+                  alt="Smart Baby Cradle"
+                  width={480}
+                  height={380}
+                  className="drop-shadow-lg"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section id="features" className="py-20 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-6">
+              <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
+                Why Parents Love Cradlers
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: Baby,
+                    title: "Smart Motion",
+                    desc: "Adapts to your baby's sleep cycles.",
+                  },
+                  {
+                    icon: Shield,
+                    title: "Safety First",
+                    desc: "Certified and tested for security.",
+                  },
+                  {
+                    icon: Smartphone,
+                    title: "Mobile App Control",
+                    desc: "Adjust settings from anywhere.",
+                  },
+                  {
+                    icon: Moon,
+                    title: "Sleep Tracking",
+                    desc: "Monitor sleep quality effortlessly.",
+                  },
+                  {
+                    icon: Heart,
+                    title: "Comfort Sensors",
+                    desc: "Maintains ideal temperature & humidity.",
+                  },
+                  {
+                    icon: Music,
+                    title: "Soothing Sounds",
+                    desc: "Gentle lullabies & white noise.",
+                  },
+                ].map(({ icon: Icon, title, desc }, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2"
+                  >
+                    <div className="bg-[#E0F7F5] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Icon className="w-12 h-12 text-[#28B7A6]" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                      {title}
+                    </h3>
+                    <p className="text-gray-600">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <section
+            id="testimonials"
+            className="py-20 bg-gradient-to-r from-[#E0F7F5] to-white overflow-hidden"
           >
-            {carouselImages.map((image, index) => (
-              <div key={index} className="h-[600px] relative">
-                <Image
-                  src={image}
-                  alt={`Marketing Image ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <div className="text-center text-white max-w-2xl px-4">
-                    <h1 className="text-5xl font-bold mb-6">
-                      Revolutionizing Baby Care with IoT
-                    </h1>
-                    <p className="text-xl mb-8">
-                      Control, monitor, and care for your baby from anywhere with our smart cradle and mobile app.
-                    </p>
-                    <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
-                      Learn More
-                    </button>
-                  </div>
+            <div className="max-w-7xl mx-auto px-6">
+              <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
+                What Parents Say
+              </h2>
+              <div className="relative w-full overflow-hidden">
+                <div className="flex animate-scroll whitespace-nowrap">
+                  {testimonials
+                    .concat(testimonials)
+                    .map((testimonial, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between mx-4 min-w-[320px] sm:min-w-[400px] max-w-[450px] h-auto text-left overflow-hidden text-wrap break-words"
+                      >
+                        <Quote className="text-gray-300 w-12 h-12" />
+                        <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                          "{testimonial.text}"
+                        </p>
+                        <h3 className="text-lg font-semibold text-[#28B7A6]">
+                          - {testimonial.name}
+                        </h3>
+                      </div>
+                    ))}
                 </div>
               </div>
-            ))}
-          </Carousel>
-        </section>
+            </div>
+          </section>
 
-        {/* App Features */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
-              Why Choose Cradlers?
+          {/* Call to Action Section */}
+          <section className="bg-gradient-to-r from-[#d3ebeb] to-[#d7fffb] text-light-grey text-center py-16 px-6">
+            <h2 className="text-4xl font-extrabold mb-4">
+              Give Your Baby The Best Sleep
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {appFeatures.map(({ icon: Icon, title, description }, index) => (
-                <div
-                  key={index}
-                  className="text-center p-8 bg-[#E0F7F5] rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2"
-                >
-                  <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-[#28B7A6]" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">
-                    {title}
-                  </h3>
-                  <p className="text-gray-600">{description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* IoT Section */}
-        <section className="py-20 bg-[#E0F7F5]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={carouselImages[0]}
-                  alt="IoT Smart Cradle"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-6">
-                <h2 className="text-4xl font-extrabold text-gray-900">
-                  IoT-Enabled Smart Cradle
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Our smart cradle is powered by IoT technology, allowing you to monitor and control your baby's environment from anywhere.
-                </p>
-                <p className="text-lg text-gray-600">
-                  With real-time data tracking and cloud integration, you can analyze your baby's sleep patterns and make adjustments to improve their comfort.
-                </p>
-                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
-                  Explore Features
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mobile App Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="text-4xl font-extrabold text-gray-900">
-                  Android & iOS App
-                </h2>
-                <p className="text-lg text-gray-600">
-                  The Cradlers App allows you to control every aspect of the cradle with just a few taps on your smartphone.
-                </p>
-                <p className="text-lg text-gray-600">
-                  Adjust rocking speed, play lullabies, or monitor sleep patterns—all from your phone.
-                </p>
-                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
-                  Download Now
-                </button>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={carouselImages[1]}
-                  alt="Mobile App"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Cloud Section */}
-        <section className="py-20 bg-[#E0F7F5]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={carouselImages[0]}
-                  alt="Cloud Integration"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-6">
-                <h2 className="text-4xl font-extrabold text-gray-900">
-                  Cloud Integration
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Your baby's sleep data is securely stored in the cloud. Access trends and optimize care anytime.
-                </p>
-                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Custom Settings */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="text-4xl font-extrabold text-gray-900">
-                  Customizable Settings
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Customize rocking speeds, lullabies, and temperature for your baby's comfort.
-                </p>
-                <button className="bg-[#28B7A6] hover:bg-[#1F9786] text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300">
-                  Explore Settings
-                </button>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={carouselImages[0]}
-                  alt="Custom Settings"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* App Download Section */}
-        <section className="bg-gradient-to-r from-[#28B7A6] to-[#1F9786] text-white text-center py-16 px-6">
-          <h2 className="text-4xl font-extrabold mb-4">Download the App Today</h2>
-          <p className="text-lg sm:text-xl mb-6">
-            Available on both Android and iOS. Take control of your baby's comfort from anywhere.
-          </p>
-          <div className="flex justify-center space-x-6">
-            <button className="bg-white text-[#28B7A6] py-3 px-8 rounded-full font-bold transition transform hover:scale-105 duration-300 shadow-lg flex items-center">
-              <Download className="w-6 h-6 mr-2" />
-              Download for Android
+            <p className="text-lg sm:text-xl mb-6">
+              Order your Smart Baby Cradle today and enjoy peaceful nights!
+            </p>
+            <button className="bg-white text-[#1B8577] hover:bg-gray-100 py-4 px-12 rounded-full font-bold transition transform hover:scale-105 duration-300 shadow-lg">
+              Get Yours Now
             </button>
-            <button className="bg-white text-[#28B7A6] py-3 px-8 rounded-full font-bold transition transform hover:scale-105 duration-300 shadow-lg flex items-center">
-              <Download className="w-6 h-6 mr-2" />
-              Download for iOS
-            </button>
-          </div>
-        </section>
+          </section>
 
-        <Footer />
-      </main>
+          {/* Footer Section */}
+          <Footer />
+        </main>
+      )}
+
+      {/* Tailwind CSS for smooth scrolling animation */}
+      <style jsx>{`
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        .scroll-wrapper {
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+          width: 100%;
+        }
+
+        .animate-scroll {
+          display: flex;
+          animation: scroll 25s linear infinite;
+          min-width: 200%;
+        }
+
+        .testimonial {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 0 1rem;
+          min-width: 320px;
+          max-width: 450px;
+          text-align: left;
+        }
+      `}</style>
     </>
   );
 }
